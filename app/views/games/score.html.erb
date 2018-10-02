@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Longest Word Score</h1>
+
+  <% if @letter_check %>
+    <% if @legit_word %>
+      <p>Congrats!! <strong><%= @word %></strong> is an excellent find!  Nice one! </p>
+      <p>Your current score for this session is <strong><%= @score %></strong></p>
+    <% else %>
+      <p>Uh oh!! <strong><%= @word %></strong> isn't a legitimate English word...Nice try, better luck next time!!</p>
+      <p>Your current score for this session is still <strong><%= session[:score] %></strong></p>
+    <% end %>
+  <% else %>
+    <p>Sorry ☹️ it doesn't look like <strong><%= @word %></strong> can be created from these letters, <em><%= @letters %></em>.</p>
+    <p>Your current score for this session is still <strong><%= session[:score] %></strong></p>
+  <% end %>
+
+  <p><%= link_to "Do you want to play again?", new_path %></p>
+
+</div>
+
